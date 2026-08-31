@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de consulta de disponibilidade de entrega por CEP.">
+    <title>Armazém Avenida | Área de Entrega</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Armazém Avenida</h1>
+        <p>Verifique a disponibilidade de entrega para sua região</p>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <form id="cep-form">
+                <label for="cep-input">Digite o CEP de destino:</label>
+                <div class="input-group">
+                    <input type="text" id="cep-input" placeholder="00000-000" required aria-required="true" maxlength="9">
+                    <button type="submit" id="search-btn">Buscar</button>
+                </div>
+                <span id="error-message" class="error hidden" aria-live="polite"></span>
+            </form>
+        </section>
+
+        <section id="result-section" class="result-section hidden" aria-live="polite">
+            <h2>Resultado da Consulta</h2>
+            <div class="card">
+                <p><strong>Status:</strong> <span id="status-entrega" class="badge"></span></p>
+                <hr class="divisor">
+                <p><strong>Logradouro:</strong> <span id="logradouro"></span></p>
+                <p><strong>Bairro:</strong> <span id="bairro"></span></p>
+                <p><strong>Cidade/UF:</strong> <span id="localidade"></span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Armazém Avenida. Desenvolvido sob boas práticas web.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
